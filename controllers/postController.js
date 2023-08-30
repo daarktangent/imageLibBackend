@@ -19,6 +19,20 @@ const createPost=async(req,res)=>
         res.status(400).send({success:false,msg:error.message});
     }
 }
+
+const getPosts = async(req,res)=>
+{
+    try
+    { 
+        const posts = await Post.find({});
+        res.status(200).send({success:true,msg:'get complete',data:posts})
+    }
+    catch (error)
+    {
+        res.status(400).send({success:false,msg:error.message});
+    }
+}
 module.exports = {
-    createPost
+    createPost,
+    getPosts
 }
