@@ -44,6 +44,12 @@ const storage=multer.diskStorage(
 
     post_route.post('/create-post',upload.single('image'),postController.createPost);
     post_route.get('/get-posts',postController.getPosts);
+
+    post_route.delete('/delete-post/:id', postController.deletePost);
     
+    post_route.post('/update-post',upload.single('image'), postController.updatePost);
+
+
+
     
     module.exports = post_route;

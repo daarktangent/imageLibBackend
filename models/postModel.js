@@ -6,7 +6,7 @@ const postSchema=mongoose.Schema(
         {
             type:String,
             required:true
-        },//name can be different 
+        },
         date:
         {
             type:String,
@@ -16,7 +16,11 @@ const postSchema=mongoose.Schema(
         {
             type:String,
             required:true
-        }
+        },
+        isFavorite: {
+            type: Boolean,
+            default:false
+          }
     });
 
 module.exports=mongoose.model("Post",postSchema);
